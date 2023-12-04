@@ -1,5 +1,6 @@
-f = open("input.txt", "r", encoding="utf-8")
-valid_digits = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+f = open("alt-input.txt", "r", encoding="utf-8")
+valid_digits_text = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+valid_digits_numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 def part_one():
     n = 0
@@ -12,7 +13,18 @@ def part_one():
     print(n)
 
 def part_two():
-    def check_if_valid(n):
-        if n.isdigit():
-            return True
-        elseif 
+    def get_digits(s):
+        i_digits = []
+        i_digits.append(s.find(valid_digits_numbers))
+        i_digits.append(s.rfind(valid_digits_numbers))
+        print(i_digits)
+        i_text = []
+        i_text.append(s.find(valid_digits_text))
+        i_text.append(s.rfind(valid_digits_text))
+        print(i_text)
+    for line in f:
+        get_digits(line)
+
+if __name__ == "__main__":
+    #part_one()
+    part_two()
